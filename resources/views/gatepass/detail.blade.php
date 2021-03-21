@@ -70,7 +70,7 @@
                         <td style="border-color: white"></td>
                         <td style="border-bottom-color: white"></td>
                         <td>Grand Total</td>
-                        <td>40</td>
+                        <td>-</td>
                     </tr>
                  
                    
