@@ -79,6 +79,7 @@
             <div>
                 <span for="">Transport Charges to be paid by : </span>
             </div>
+            <br>
             <div class="row">
                 <div class="col ml-50">
                     <span for="">Transport Agent : {{$gate->trans_agent}} </span>
@@ -87,6 +88,7 @@
                     <span for="">Trucking  No :  {{$gate->truck}}</span>
                 </div>
             </div>
+            <br>
             <br>
             <div class="row">
                 <div class="col">
