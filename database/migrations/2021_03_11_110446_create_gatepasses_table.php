@@ -23,6 +23,7 @@ class CreateGatepassesTable extends Migration
             $table->string('despatch_spv')->nullable();
             $table->string('despatch_manag')->nullable();
             $table->string('authorized_sign')->nullable();
+            $table->string('despatch_security')->nullable();
             $table->enum('status', ['0', '1', '2', '3', '4']);
             $table->timestamps();
         });

@@ -13,10 +13,10 @@
             </ul>
         </li>
         <li class="">
-            <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="fa fa-truck mr-5"></i>GetPass</a>
+            <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="fa fa-truck mr-5"></i>Gatepass</a>
             <ul>
                 <li>
-                    <a class="" href="{{route('gatepass.index')}}">Index GetPass</a>
+                    <a class="" href="{{route('gatepass.index')}}">Index Gatepass</a>
                 </li>
             </ul>
         </li>
@@ -31,10 +31,13 @@
             <a class="" href="" class=""><i class="si si-compass"></i><span class="sidebar-mini-hide">Beranda</span></a>
         </li>
         <li class="">
-            <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="fa fa-truck mr-5"></i>GetPass</a>
+            <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="fa fa-truck mr-5"></i>Gatepass</a>
             <ul>
                 <li>
-                    <a class="" href="{{route('gatepass.index')}}">Index GetPass</a>
+                    <a class="" href="{{route('gatepass.index')}}">Gatepass Masuk</a>
+                </li>
+                <li>
+                    <a class="" href="{{route('gatepass.masuk')}}">Gatepass Index </a>
                 </li>
             </ul>
         </li>
@@ -49,10 +52,55 @@
             <a class="" href="" class=""><i class="si si-compass"></i><span class="sidebar-mini-hide">Beranda</span></a>
         </li>
         <li class="">
-            <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="fa fa-truck mr-5"></i>GetPass</a>
+            <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="fa fa-truck mr-5"></i>Gatepass</a>
             <ul>
                 <li>
-                    <a class="" href="{{route('gatepass.index')}}">Index GetPass</a>
+                    <a class="" href="{{route('gatepass.index')}}">Gatepass Masuk</a>
+                </li>
+                <li>
+                    <a class="" href="{{route('gatepass.masuk')}}">Gatepass Index</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>
+@endrole
+
+@role('authorized_manager')
+<div class="content-side content-side-full">
+    <ul class="nav-main">
+        <li>
+            <a class="" href="" class=""><i class="si si-compass"></i><span class="sidebar-mini-hide">Beranda</span></a>
+        </li>
+        <li class="">
+            <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="fa fa-truck mr-5"></i>Gatepass</a>
+            <ul>
+                <li>
+                    <a class="" href="{{route('gatepass.index')}}">Gatepass Masuk</a>
+                </li>
+                <li>
+                    <a class="" href="{{route('gatepass.masuk')}}">Gatepass Index</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>
+@endrole
+
+@role('security')
+<div class="content-side content-side-full">
+    <ul class="nav-main">
+        <li>
+            <a class="" href="" class=""><i class="si si-compass"></i><span class="sidebar-mini-hide">Beranda</span></a>
+        </li>
+        <li class="">
+            <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="fa fa-truck mr-5"></i>Gatepass</a>
+            <ul>
+                <li>
+                    <a class="" href="{{route('gatepass.index')}}">Gatepass Masuk</a>
+                </li>
+                <li>
+                    <a class="" href="{{route('gatepass.masuk')}}">Gatepass Index</a>
                 </li>
             </ul>
         </li>

@@ -13,7 +13,9 @@
 
     <!-- Right Section -->
     <div class="content-header-section">
-
+        <button type="button" class="btn btn-circle btn-dual-secondary" data-toggle="layout" data-action="side_overlay_toggle">
+            <i class="si si-bell"></i>
+        </button>
         <!-- User Dropdown -->
         <div class="btn-group" role="group">
             <button type="button" class="btn btn-rounded btn-dual-secondary" id="page-header-user-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -32,6 +34,7 @@
         <!-- END User Dropdown -->
 
         <!-- Notifications -->
+        
         {{--  @include('layouts.notif')  --}}
         <!-- END Notifications -->
 

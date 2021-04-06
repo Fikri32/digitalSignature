@@ -26,20 +26,35 @@ class GatepassController extends Controller
             $gatebar = Gatebar::all();
         }elseif(Auth::user()->hasrole('spv'))
         {
-            $gate = gatepass::where('status','=','1')->get();
+            $gate = gatepass::where('status','=','0')->get();
             $gatebar = Gatebar::all();
         }elseif(Auth::user()->hasrole('manager'))
         {
+            $gate = gatepass::where('status','=','1')->get();
+            $gatebar = Gatebar::all();
+        }
+        elseif(Auth::user()->hasrole('authorized_manager'))
+        {
             $gate = gatepass::where('status','=','2')->get();
+            $gatebar = Gatebar::all();
+        }elseif(Auth::user()->hasrole('security'))
+        {
+            $gate = gatepass::where('status','=','3')->get();
             $gatebar = Gatebar::all();
         }
         // dd($gate);
         return view('gatepass.index',compact('gate','gatebar'));
     }
 
+    public function masuk()
+    {
+        $gate = gatepass::where('status','=','4')->get();
+        return view('gatepass.masuk',compact('gate'));
+    }
+
     /**
      * Show the form for creating a new resource.
-     *
+     *  
      * @return \Illuminate\Http\Response
      */
     public function create()
@@ -133,28 +148,15 @@ class GatepassController extends Controller
      */
     public function destroy($id)
     {
+        $gate = gatepass::destroy($id); 
+        dd($gate);  
+        return redirect('gatepass');    
         //
     }
 
     public function paraf(Request $request)
     {
-        if(Auth::user()->hasrole('admin'))
-        {
-            $imagedata = base64_decode($request->img_data);
-            $filename = md5(date("dmYhisA"));
-            $paraf = '../public/uploads/paraf_authorized/'.$filename.'.png';
-            file_put_contents($paraf,$imagedata);
-    
-            $gatepass = gatepass::find($request->gatepass_id);
-            $gatepass->authorized_sign = 'uploads/paraf_authorized/'.$filename.'.png';
-            $gatepass->status = '1';
-            if($gatepass->save())
-            {
-                return response()->json([
-                    'fail' => false,
-                ]);
-            }
-        }elseif(Auth::user()->hasrole('spv'))
+        if(Auth::user()->hasrole('spv'))
         {
             $imagedata = base64_decode($request->img_data);
             $filename = md5(date("dmYhisA"));
@@ -163,14 +165,14 @@ class GatepassController extends Controller
     
             $gatepass = gatepass::find($request->gatepass_id);
             $gatepass->despatch_spv = 'uploads/paraf_spv/'.$filename.'.png';
-            $gatepass->status = '2';
+            $gatepass->status = '1';
             if($gatepass->save())
             {
                 return response()->json([
                     'fail' => false,
                 ]);
             }
-        }else
+        }elseif(Auth::user()->hasrole('manager'))
         {
             $imagedata = base64_decode($request->img_data);
             $filename = md5(date("dmYhisA"));
@@ -179,7 +181,38 @@ class GatepassController extends Controller
     
             $gatepass = gatepass::find($request->gatepass_id);
             $gatepass->despatch_manag = 'uploads/paraf_manag/'.$filename.'.png';
+            $gatepass->status = '2';
+            if($gatepass->save())
+            {
+                return response()->json([
+                    'fail' => false,
+                ]);
+            }
+        }elseif(Auth::user()->hasrole('authorized_manager'))
+        {
+            $imagedata = base64_decode($request->img_data);
+            $filename = md5(date("dmYhisA"));
+            $paraf = '../public/uploads/paraf_authorized/'.$filename.'.png';
+            file_put_contents($paraf,$imagedata);
+    
+            $gatepass = gatepass::find($request->gatepass_id);
+            $gatepass->authorized_sign = 'uploads/paraf_authorized/'.$filename.'.png';
             $gatepass->status = '3';
+            if($gatepass->save())
+            {
+                return response()->json([
+                    'fail' => false,
+                ]);
+            }
+        }else{
+            $imagedata = base64_decode($request->img_data);
+            $filename = md5(date("dmYhisA"));
+            $paraf = '../public/uploads/paraf_security/'.$filename.'.png';
+            file_put_contents($paraf,$imagedata);
+    
+            $gatepass = gatepass::find($request->gatepass_id);
+            $gatepass->despatch_security = 'uploads/paraf_security/'.$filename.'.png';
+            $gatepass->status = '4';
             if($gatepass->save())
             {
                 return response()->json([

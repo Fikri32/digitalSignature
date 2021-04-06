@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth/login');
 });
 
 Auth::routes();
@@ -23,7 +23,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('barang','BarangController');
 Route::resource('gatepass','GatepassController');
+
 Route::group(['prefix' => 'gatepass'],function(){
-  
+   
     Route::post('paraf','GatepassController@paraf')->name('gatepass.paraf');
 });
+Route::get('history','GatepassController@masuk')->name('gatepass.masuk');

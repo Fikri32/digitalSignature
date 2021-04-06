@@ -3,7 +3,7 @@
     // save_method = 'ditambahkan';
     $('#paraf_kasubbag').modal({backdrop: 'static', keyboard: false});
     $('#paraf_kasubbag').modal('show');
-    $('.modal-title').text('Paraf Surat Disposisi');
+    $('.modal-title').text('Paraf Gatepass');
     $('#gatepass_id').val(id);
 
 }

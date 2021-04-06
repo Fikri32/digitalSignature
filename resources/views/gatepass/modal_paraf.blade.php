@@ -3,7 +3,7 @@
         <div class="modal-content">
             <div class="block block-rounded mb-0">
                 <div class="modal-header block-header bg-gd-sea">
-                    <h3 class="modal-title block-title text-white">Form Terusan Disposisi</h3>
+                    <h3 class="modal-title block-title text-white">Form Paraf Gatepass</h3>
                     <div class="block-options">
                         <button type="button" class="btn-block-option text-white" data-dismiss="modal" aria-label="Close">
                             <i class="si si-close"></i>

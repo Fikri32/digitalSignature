@@ -20,7 +20,8 @@ class RoleSeeder extends Seeder
         Role::create(['name' => 'admin']);
         Role::create(['name' => 'spv']);
         Role::create(['name' => 'manager']);
-       
+        Role::create(['name' => 'authorized_manager']);
+        Role::create(['name' => 'security']);
 
     }
 }

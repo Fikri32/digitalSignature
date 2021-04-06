@@ -6,22 +6,35 @@
         <div class="block-header block-header-default">
             <h3 class="block-title"></h3>
             <div class="block-options">
+              @if ($gate->status == 4)
+              <button class="btn btn-rounded btn-success mr-10" disabled>
+                <i class="si si-note mx-5"></i>
+                <span class="d-none d-sm-inline"> Surat Sudah Di paraf</span>
+            </button>
+              @else
+              <button class="btn btn-rounded btn-primary mr-10" onclick="paraf({{ $gate->id }})">
+                <i class="si si-note mx-5"></i>
+                <span class="d-none d-sm-inline"> Paraf Surat Gatepass</span>
+            </button>
+              @endif
+                    
+               
              
-                <button class="btn btn-rounded btn-primary mr-10" onclick="paraf({{ $gate->id }})">
-                    <i class="si si-note mx-5"></i>
-                    <span class="d-none d-sm-inline"> Paraf Surat Gatepass</span>
-                </button>
+                
             </div>
         </div>
         <div class="block-content">
-            <div class="row">
-                <div class="col-md-4">
-
+            <div class="row mb-2">
+                <div class="col-md">
+                    <img src="{{asset('logo/new_logo.png')}}" class="mt-2 ml-5" style="width: 50%" alt="">
+                    <div>
+                        {{-- <p>PERFORMANCE FABRICS DIVISION</p> --}}
+                    </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md">
                     <h3 class="text-center">GATE PASS</h3>
                     
-                    <textarea name="" id="" cols="50" rows="3" disabled></textarea>
+                    <textarea name="" id="" cols="70" rows="4" disabled></textarea>
                 </div>
 
                 <div class="col-md-4">
@@ -59,7 +72,7 @@
                         <td>
                           {{$data['gate']->barang[$i]->nama}}
                         </td>
-                        <td></td>
+                        <td>PCS</td>
                        
                         <td>{{$data['gatebar'][$i]->quantity}}</td>
                         <td>{{$data['gatebar'][$i]->remarks}}</td>
@@ -98,7 +111,7 @@
                     </div>
                 </div>
                 <div class="col">
-                    <img style= "border-style: solid;width : 90%"  src="" alt="..." class="rounded-0">
+                    <img style= "border-style: solid;width : 90%"  src="{{asset($gate->authorized_sign)}}" alt="..." class="rounded-0">
                     <div class="text-center mr-30">
                         <label class="">Security</label>
                     </div>

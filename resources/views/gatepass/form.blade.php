@@ -30,7 +30,7 @@
                             <div class="form-group row">
                                 <div class="col-md-12">
                                     <div class="form-material form-material-primary">
-                                        {!! Form::label('name','GO')!!}
+                                        {!! Form::label('name','GP')!!}
                                         {!! Form::text('GO',null,['class' => 'form-control','placeholder' => 'GP No'])!!}
                                     </div>
                                 </div>

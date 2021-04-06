@@ -3,6 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
+use App\gatepass;
+use App\Barang;
+use App\Gatebar;
+use Spatie\Permission\Models\Role;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -23,6 +29,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('beranda');
+        $gate = gatepass::where('status','=','4')->get();
+        // dd($gate); 
+        return view('beranda',compact('gate'));
     }
 }

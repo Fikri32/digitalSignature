@@ -14,7 +14,7 @@ class UsersSeeder extends Seeder
     {
         $user = User::create([
             'name' => 'Admin',
-            'email' => 'admin@admin.com',
+          
             'password' => bcrypt('admin123')
         ]);
 
@@ -22,7 +22,7 @@ class UsersSeeder extends Seeder
 
         $spv = User::create([
             'name' => 'Supervisior',
-            'email' => 'spv@spv.com',
+        
             'password' => bcrypt('admin123')
         ]);
 
@@ -30,10 +30,26 @@ class UsersSeeder extends Seeder
 
         $manag = User::create([
             'name' => 'Manager',
-            'email' => 'manag@manag.com',
+           
             'password' => bcrypt('admin123')
         ]);
 
         $manag->assignRole('manager');
+
+        $autho = User::create([
+            'name' => 'Authorized manager',
+        
+            'password' => bcrypt('admin123')
+        ]);
+
+        $autho->assignRole('authorized_manager');
+
+        $security = User::create([
+            'name' => 'Security',
+         
+            'password' => bcrypt('admin123')
+        ]);
+
+        $security->assignRole('security');
     }
 }

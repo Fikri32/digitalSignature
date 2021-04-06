@@ -8,7 +8,7 @@
                 <div class="block-content">
                     <div class="py-20 text-center">
                         <h1 class="font-w700 text-white mb-10">GatePass</h1>
-                        <h2 class="h4 font-w400 text-white-op">Surat Gatepass Masuk</h2>
+                        <h2 class="h4 font-w400 text-white-op">Gatepass History</h2>
                     </div>
                 </div>
             </div>
@@ -16,10 +16,6 @@
             <div class="block block-rounded">
                 <div class="block-content bg-body-light">
                     <!-- Search -->
-                    @if (Auth::user()->hasrole('admin'))
-                    <a href="{{route('gatepass.create')}}" class="btn btn-primary mb-2">Tambah Gatepass</a>
-                    @endif
-                  
                     <!-- END Search -->
                 </div>
                 <div class="block-content">
@@ -27,7 +23,7 @@
                     {{-- @if($surat_data <> '') --}}
                     <table class="js-table-checkable table table-hover js-table-checkable-enabled table-bordered">
                         <thead>
-                            <tr class="text-center">
+                            <tr>
                                 <th style="width: 100px;">No. Indeks</th>
                                 <th class="">GO</th>
                                 <th class="">PO</th>
@@ -40,7 +36,7 @@
                         </thead>
                         <tbody>
                             @foreach ($gate as $index => $d)
-                            <tr class="text-center">
+                            <tr>
                                 <td>{{$index + 1}}</td>
                                 <td>{{$d->GO}}</td>
                                 <td>{{$d->PO}}</td>
