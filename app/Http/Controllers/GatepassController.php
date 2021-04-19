@@ -106,6 +106,10 @@ class GatepassController extends Controller
      */
     public function show($id)
     {
+    }
+
+    public function detail($id)
+    {
         $gate = gatepass::findOrFail($id);
         $gatebar = Gatebar::where('gatepass_id',$id)->get();
         $data = [
@@ -115,7 +119,7 @@ class GatepassController extends Controller
         // dd($gatebar);
         // dd($data);
         return view('gatepass/detail',compact('gate','gatebar','data'));
-    }
+    } 
 
     /**
      * Show the form for editing the specified resource.
@@ -148,9 +152,8 @@ class GatepassController extends Controller
      */
     public function destroy($id)
     {
-        $gate = gatepass::destroy($id); 
-        dd($gate);  
-        return redirect('gatepass');    
+        gatepass::destroy($id);
+        return redirect('gatepass');
         //
     }
 

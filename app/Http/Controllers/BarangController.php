@@ -63,7 +63,8 @@ class BarangController extends Controller
      */
     public function edit($id)
     {
-        //
+        $barang = Barang::findOrFail($id);
+        return view('barang.form',compact('barang'));
     }
 
     /**
@@ -75,7 +76,10 @@ class BarangController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $barang = Barang::find($id);
+        $input = $request->all();
+        $barang->fill($input)->save();
+        return redirect('barang');
     }
 
     /**
@@ -86,7 +90,7 @@ class BarangController extends Controller
      */
     public function destroy($id)
     {
-        $barang = Barang::findOrFail($id);
-        $barang->delete();
+        Barang::destroy($id);
+        return redirect('barang');
     }
 }

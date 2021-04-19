@@ -6,8 +6,18 @@
         <div class="block-header block-header-default">
             <h3 class="block-title"></h3>
             <div class="block-options">
-              @if ($gate->status == 4)
-              <button class="btn btn-rounded btn-success mr-10" disabled>
+          
+            <button class="btn btn-rounded btn-info mr-10">
+                <i class="fa fa-edit mx-5"></i>
+                <span class="d-none d-sm-inline">Komentar</span>
+            </button>
+           
+            <button class="btn btn-rounded btn-warning mr-10">
+                <i class="fa fa-print mx-5"></i>
+                <span class="d-none d-sm-inline"> Print Surat</span>
+            </button>
+            @if ($gate->status == 4)
+            <button class="btn btn-rounded btn-success mr-10" disabled>
                 <i class="si si-note mx-5"></i>
                 <span class="d-none d-sm-inline"> Surat Sudah Di paraf</span>
             </button>
@@ -17,10 +27,6 @@
                 <span class="d-none d-sm-inline"> Paraf Surat Gatepass</span>
             </button>
               @endif
-                    
-               
-             
-                
             </div>
         </div>
         <div class="block-content">
@@ -56,7 +62,7 @@
             <table class="table table-bordered">
                 <thead>
                     <tr>
-                        <td>P/L No</td>
+                        <td >P/L No</td>
                         <td>Description</td>
                         <td>Unit</td>
                         <td>Quantity</td>
@@ -111,7 +117,7 @@
                     </div>
                 </div>
                 <div class="col">
-                    <img style= "border-style: solid;width : 90%"  src="{{asset($gate->authorized_sign)}}" alt="..." class="rounded-0">
+                    <img style= "border-style: solid;width : 90%"  src="{{asset($gate->despatch_security)}}" alt="..." class="rounded-0">
                     <div class="text-center mr-30">
                         <label class="">Security</label>
                     </div>

@@ -19,9 +19,11 @@
             <div class="block block-rounded">
                 <div class="block-content">
                     @if (!empty($barang))
-                        {!! Form::model($barang,['url' => ['barang',$barang->id],'method' => 'PUT']) !!}
-                        {!! Form::hidden('id') !!}
-                    @else
+                    {!! Form::model($barang,['url' => ['barang',$barang->id],'method' => 'PUT','class' => 'form-horizontal form-label-left']) !!}
+          
+                    {!! Form::hidden('id') !!}
+                      
+                  @else
                         {!! Form::open(['url' => 'barang']) !!}
                     @endif
 
@@ -40,9 +42,10 @@
                     </div>
                 </div>
             </div>
+            {!! Form::close() !!}
             <!-- END Default Elements -->
         </div>
     </div>
 </div>
-@stop
+@endsection
 

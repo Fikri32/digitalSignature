@@ -28,9 +28,9 @@
                     <table class="js-table-checkable table table-hover js-table-checkable-enabled">
                         <thead>
                             <tr>
-                                <th style="width: 100px;">No. Indeks</th>
-                                <th class="d-none d-sm-table-cell">Nama</th>
-                                <th class="d-none d-sm-table-cell">Action</th>
+                                <th>No. Indeks</th>
+                                <th>Nama</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -40,7 +40,13 @@
                                     {{$index + 1}}
                                 </td>
                                 <td>{{$d->nama}}</td>
-                                <td></td>
+                                <td>
+                                    <a href="{{route('barang.edit',$d->id)}}" class="btn btn-warning">edit</a>
+                                    {!! Form::open(['url' => 'barang/'. $d->id,'class' => 'delete','style' => 'display:inline-table']) !!}
+                                    {!! Form::hidden('_method','DELETE') !!}
+                                    {!! Form::submit('delete',['class' => 'btn btn-danger'])!!}
+                                    {!! Form::close()!!}
+                                </td>
                             </tr>
                             @endforeach
                         </tbody>

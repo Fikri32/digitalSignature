@@ -113,7 +113,7 @@
       html = '<tr>';
             html += '<td><select class="form-control" name="barang[]" id="barang"><option value="">Pilih Barang</option>@foreach($barang as $d)  <option value="{{ $d->id }}">{{ ucfirst($d->nama) }}</option>@endforeach</select></td>';
             html += '<td><input type="text" name="quantity[]" class="form-control" /></td>';
-            html += '<td><input type="text" name="remarks[]" class="form-control" /></td>';
+            html += '<td><input type="text" name="remarks[]" class="form-control" value ="-"  /></td>';
             if(number > 1)
             {
                 html += '<td><button type="button" name="remove" id="" class="btn btn-danger remove">Remove</button></td></tr>';

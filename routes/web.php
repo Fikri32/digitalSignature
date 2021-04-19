@@ -25,7 +25,7 @@ Route::resource('barang','BarangController');
 Route::resource('gatepass','GatepassController');
 
 Route::group(['prefix' => 'gatepass'],function(){
-   
+    Route::get('detail/{id}','GatepassController@detail')->name('gatepass.detail');
     Route::post('paraf','GatepassController@paraf')->name('gatepass.paraf');
 });
 Route::get('history','GatepassController@masuk')->name('gatepass.masuk');
