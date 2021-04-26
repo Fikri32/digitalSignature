@@ -65,7 +65,7 @@
                     </table>    
                 </div>
             </div>
-            <table class="table table-bordered">
+            <table id="myTable" class="table table-bordered">
                 <thead>
                     <tr>
                         <td >P/L No</td>
@@ -86,7 +86,7 @@
                         </td>
                         <td>PCS</td>
                        
-                        <td>{{$data['gatebar'][$i]->quantity}}</td>
+                        <td id="quantity">{{$data['gatebar'][$i]->quantity}}</td>
                         <td>{{$data['gatebar'][$i]->remarks}}</td>
                     </tr>
                    
@@ -160,4 +160,13 @@
 @push('scripts')
     @include('gatepass.script_paraf')
     @include('gatepass.script_komentar')
+
+    <script>
+        $(document).ready(function(){
+            var x = document.getElementById("myTable").rows[0].cells[0].length;
+            var r = $("#quantity").text();
+            var d = x * r;
+            console.log(d);
+        });
+    </script>
 @endpush
