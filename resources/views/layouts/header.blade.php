@@ -22,7 +22,6 @@
                 {{ Auth::user()->name }}<i class="fa fa-angle-down ml-5"></i>
             </button>
             <div class="dropdown-menu dropdown-menu-right min-width-150" aria-labelledby="page-header-user-dropdown">
-                <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                     <i class="si si-logout mr-5"></i> Keluar
                 </a>

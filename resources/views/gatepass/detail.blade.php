@@ -6,13 +6,13 @@
         <div class="block-header block-header-default">
             <h3 class="block-title"></h3>
             <div class="block-options">
-          
-            <button class="btn btn-rounded btn-info mr-10">
+            @role('spv|manager|authorized_manager|security')
+            <button class="btn btn-rounded btn-info mr-10"  onclick="komentar({{ $gate->id }})">
                 <i class="fa fa-edit mx-5"></i>
                 <span class="d-none d-sm-inline">Komentar</span>
             </button>
-           
-            <button class="btn btn-rounded btn-warning mr-10">
+           @endrole
+            <button class="btn btn-rounded btn-warning mr-10" onClick="window.print()">
                 <i class="fa fa-print mx-5"></i>
                 <span class="d-none d-sm-inline"> Print Surat</span>
             </button>
@@ -22,10 +22,12 @@
                 <span class="d-none d-sm-inline"> Surat Sudah Di paraf</span>
             </button>
               @else
+              @role('spv|manager|authorized_manager|security')
               <button class="btn btn-rounded btn-primary mr-10" onclick="paraf({{ $gate->id }})">
                 <i class="si si-note mx-5"></i>
                 <span class="d-none d-sm-inline"> Paraf Surat Gatepass</span>
             </button>
+              @endrole
               @endif
             </div>
         </div>
@@ -40,7 +42,11 @@
                 <div class="col-md">
                     <h3 class="text-center">GATE PASS</h3>
                     
-                    <textarea name="" id="" cols="70" rows="4" disabled></textarea>
+                    <textarea name="" id="" cols="70" rows="4" disabled>
+                        ASIA PACIFIC FIBERS.PT 
+                        THE EASE JL.MEGA KUNINGAN 
+                        BLOK E KAV 1
+                    </textarea>
                 </div>
 
                 <div class="col-md-4">
@@ -101,10 +107,10 @@
             <br>
             <div class="row">
                 <div class="col ml-50">
-                    <span for="">Transport Agent : {{$gate->trans_agent}} </span>
+                    <span for="">Transport Agent : <b>{{$gate->trans_agent}}</b> </span>
                 </div>
                 <div class="col">
-                    <span for="">Trucking  No :  {{$gate->truck}}</span>
+                    <span for="">Trucking  No :  <b>{{$gate->truck}}</b></span>
                 </div>
             </div>
             <br>
@@ -147,8 +153,10 @@
     
 </div>
 @include('gatepass.modal_paraf')
+@include('gatepass.modal_komentar')
 
 @stop
 @push('scripts')
     @include('gatepass.script_paraf')
+    @include('gatepass.script_komentar')
 @endpush
