@@ -117,8 +117,9 @@
             <br>
             <div class="row">
                 <div class="col">
-                    <img style= "border-style: solid;width : 90%"  src="" alt="..." class="rounded-0">
-                    <div class="ml-30">
+                    <div style= "border-style: solid;width : 90%; height : 60%"   class="rounded-0">
+                    </div>
+                    <div class="ml-30 centered">
                         <label class="text-center">Received By</label>
                     </div>
                 </div>

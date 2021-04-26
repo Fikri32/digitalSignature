@@ -2,7 +2,7 @@
 <div class="content-side content-side-full">
     <ul class="nav-main">
         <li>
-            <a class="" href="" class=""><i class="si si-compass"></i><span class="sidebar-mini-hide">Beranda</span></a>
+            <a class="" href="{{route('home')}}" class=""><i class="si si-compass"></i><span class="sidebar-mini-hide">Beranda</span></a>
         </li>
         <li class="">
             <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-social-dropbox mr-5"></i>Barang</a>
@@ -28,7 +28,7 @@
 <div class="content-side content-side-full">
     <ul class="nav-main">
         <li>
-            <a class="" href="" class=""><i class="si si-compass"></i><span class="sidebar-mini-hide">Beranda</span></a>
+            <a class="" href="{{route('home')}}" class=""><i class="si si-compass"></i><span class="sidebar-mini-hide">Beranda</span></a>
         </li>
         <li class="">
             <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="fa fa-truck mr-5"></i>Gatepass</a>
@@ -49,7 +49,7 @@
 <div class="content-side content-side-full">
     <ul class="nav-main">
         <li>
-            <a class="" href="" class=""><i class="si si-compass"></i><span class="sidebar-mini-hide">Beranda</span></a>
+            <a class="" href="{{route('home')}}" class=""><i class="si si-compass"></i><span class="sidebar-mini-hide">Beranda</span></a>
         </li>
         <li class="">
             <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="fa fa-truck mr-5"></i>Gatepass</a>
@@ -70,7 +70,7 @@
 <div class="content-side content-side-full">
     <ul class="nav-main">
         <li>
-            <a class="" href="" class=""><i class="si si-compass"></i><span class="sidebar-mini-hide">Beranda</span></a>
+            <a class="" href="{{route('home')}}" class=""><i class="si si-compass"></i><span class="sidebar-mini-hide">Beranda</span></a>
         </li>
         <li class="">
             <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="fa fa-truck mr-5"></i>Gatepass</a>
@@ -91,7 +91,7 @@
 <div class="content-side content-side-full">
     <ul class="nav-main">
         <li>
-            <a class="" href="" class=""><i class="si si-compass"></i><span class="sidebar-mini-hide">Beranda</span></a>
+            <a class="" href="{{route('home')}}" class=""><i class="si si-compass"></i><span class="sidebar-mini-hide">Beranda</span></a>
         </li>
         <li class="">
             <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="fa fa-truck mr-5"></i>Gatepass</a>

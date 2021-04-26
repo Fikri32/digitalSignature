@@ -49,7 +49,7 @@
                                    {{$d->truck}}
                                 </td>
                                 <td>
-                                    <a href="{{route('gatepass.show',$d->id)}}" class="btn btn-warning">Detail</a>
+                                    <a href="{{route('gatepass.detail',$d->id)}}" class="btn btn-warning">Detail</a>
                                     {{-- <a href="gatepass/{{$d->id}}" class="btn btn-danger">Delete</a> --}}
                                 </td>
                                 

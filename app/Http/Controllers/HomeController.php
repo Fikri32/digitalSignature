@@ -30,7 +30,8 @@ class HomeController extends Controller
     public function index()
     {
         $gate = gatepass::where('status','=','4')->get();
+        $barang = Barang::all();
         // dd($gate); 
-        return view('beranda',compact('gate'));
+        return view('beranda',compact('gate','barang'));
     }
 }
