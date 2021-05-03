@@ -11,51 +11,30 @@
                 <div class="block-content">
                     <div class="py-20 text-center">
                         <h1 class="font-w700 text-white mb-10">Gatepass</h1>
-                        <h2 class="h4 font-w400 text-white-op">{{($formTitle)}} Data Gatepass</h2>
+                        <h2 class="h4 font-w400 text-white-op">{{($formTitle)}} Data Label</h2>
                     </div>
                 </div>
             </div>
             <!-- Default Elements -->
             <div class="block block-rounded">
                 <div class="block-content">
-                    @if (!empty($gate))
-                        {!! Form::model($gate,['url' => ['gatepass',$gate->id],'method' => 'PUT']) !!}
-                        {!! Form::hidden('id') !!}
-                    @else
-                        {!! Form::open(['url' => 'gatepass','name' => 'dynamic_form']) !!}
-                    @endif
+                    {!! Form::open(['url' => 'gatepass','name' => 'dynamic_form']) !!}
                     <span id="result"></span>
                     <div class="row justify-content-center">
                         <div class="col-md-6">
                             <div class="form-group row">
                                 <div class="col-md-12">
                                     <div class="form-material form-material-primary">
-                                        {!! Form::label('name','GP')!!}
-                                        {!! Form::text('GO',null,['class' => 'form-control','placeholder' => 'GP No'])!!}
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-md-12">
-                                    <div class="form-material form-material-primary">
-                                        {!! Form::label('name','PO')!!}
-                                        {!! Form::text('PO',null,['class' => 'form-control','placeholder' => 'PO No'])!!}
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-md-12">
-                                    <div class="form-material form-material-primary">
-                                        {!! Form::label('name','Tanggal')!!}
-                                        {!! Form::date('tgl',null,['class' => 'form-control','placeholder' => 'Nama Barang'])!!}
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-md-12">
-                                    <div class="form-material form-material-primary">
                                         {!! Form::label('name','Customer')!!}
-                                        {!! Form::text('customer',null,['class' => 'form-control','placeholder' => 'Customer'])!!}
+                                        {!! Form::text('customer',$gate->customer,['class' => 'form-control ','placeholder' => 'Customer','disabled'])!!}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-md-12">
+                                    <div class="form-material form-material-primary">
+                                        {!! Form::label('name','Customer Address')!!}
+                                        {!! Form::text('custadd',$gate->cust_address,['class' => 'form-control','placeholder' => 'Customer Address','disabled'])!!}
                                     </div>
                                 </div>
                             </div>
@@ -65,24 +44,16 @@
                             <div class="form-group row">
                                 <div class="col-md-12">
                                     <div class="form-material form-material-primary">
-                                        {!! Form::label('name','Customer Address')!!}
-                                        {!! Form::text('cusadd',null,['class' => 'form-control','placeholder' => 'Customer Address'])!!}
+                                        {!! Form::label('name','Attention')!!}
+                                        {!! Form::text('attn',null,['class' => 'form-control','placeholder' => 'Attention'])!!}
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <div class="col-md-12">
                                     <div class="form-material form-material-primary">
-                                        {!! Form::label('name','Transport Agent')!!}
-                                        {!! Form::text('trans_agent',null,['class' => 'form-control','placeholder' => 'Transport Agent'])!!}
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-md-12">
-                                    <div class="form-material form-material-primary">
-                                        {!! Form::label('name','Truck')!!}
-                                        {!! Form::text('truck',null,['class' => 'form-control','placeholder' => 'Transport Agent'])!!}
+                                        {!! Form::label('name','Box')!!}
+                                        {!! Form::text('box',null,['class' => 'form-control','placeholder' => 'Box'])!!}
                                     </div>
                                 </div>
                             </div>
@@ -128,7 +99,7 @@
      function dynamic_field(number)
      {
       html = '<tr>';
-            html += '<td><select class="form-control" name="barang[]" id="barang"><option value="">Pilih Barang</option>@foreach($barang as $d)  <option value="{{ $d->id }}">{{ ucfirst($d->nama) }}</option>@endforeach</select></td>';
+            html += '<td><select class="form-control" name="barang[]" id="barang"><option value="">Pilih Barang</option></option></select></td>';
             html += '<td><input type="text" name="quantity[]" class="form-control" /></td>';
             html += '<td><input type="text" name="remarks[]" class="form-control" value ="-"  /></td>';
             if(number > 1)

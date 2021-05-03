@@ -79,6 +79,8 @@ class GatepassController extends Controller
         $gate->tgl = $request->tgl;
         $gate->trans_agent = $request->trans_agent;
         $gate->truck = $request->truck;
+        $gate->customer = $request->customer;
+        $gate->cust_address = $request->cusadd;
         $gate->status = '0';
         if($gate->save())
         {
@@ -93,7 +95,8 @@ class GatepassController extends Controller
                 $gatebar->remarks = $request->remarks[$key];
               
                 $gatebar->save();
-              }
+            }
+
             return redirect('gatepass');
         }
     }
@@ -155,6 +158,19 @@ class GatepassController extends Controller
         gatepass::destroy($id);
         return redirect('gatepass');
         //
+    }
+
+
+    public function label(Request $request,$id)
+    {
+        $gate = gatepass::findOrFail($id);
+        return view('gatepass/form_label',compact('gate'));
+    }
+
+    public function detail_label()
+    {
+        // $label = gatepass::findOrFail($id);
+        return view('gatepass/detail_label');
     }
 
     public function paraf(Request $request)

@@ -56,8 +56,9 @@
                                     <a href="{{route('gatepass.detail',$d->id)}}" class="btn btn-warning">Detail</a>
                                     {!! Form::open(['url' => 'gatepass/'. $d->id,'class' => 'delete','style' => 'display:inline-table']) !!}
                                     {!! Form::hidden('_method','DELETE') !!}
-                                    {!! Form::submit('delete',['class' => 'btn btn-danger'])!!}
+                                    {!! Form::submit('Delete',['class' => 'btn btn-danger'])!!}
                                     {!! Form::close()!!}
+                                    <a href="{{route('gatepass.label',$d->id)}}" class="btn btn-success">Label</a>
                                 </td>
                                 
                             </tr>

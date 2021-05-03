@@ -43,9 +43,8 @@
                     <h3 class="text-center">GATE PASS</h3>
                     
                     <textarea name="" id="" cols="70" rows="4" disabled>
-                        ASIA PACIFIC FIBERS.PT 
-                        THE EASE JL.MEGA KUNINGAN 
-                        BLOK E KAV 1
+                        {{$gate->customer}} 
+                        {{$gate->cust_address}}
                     </textarea>
                 </div>
 

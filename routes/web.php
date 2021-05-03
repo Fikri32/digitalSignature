@@ -27,5 +27,7 @@ Route::resource('gatepass','GatepassController');
 Route::group(['prefix' => 'gatepass'],function(){
     Route::get('detail/{id}','GatepassController@detail')->name('gatepass.detail');
     Route::post('paraf','GatepassController@paraf')->name('gatepass.paraf');
+    Route::get('label/create/{id}','GatepassController@label')->name('gatepass.label');
+    Route::get('label/detail_label','GatepassController@detail_label')->name('gatepass.label');
 });
 Route::get('history','GatepassController@masuk')->name('gatepass.masuk');

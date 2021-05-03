@@ -20,6 +20,8 @@ class CreateGatepassesTable extends Migration
             $table->date('tgl');
             $table->string('trans_agent');
             $table->string('truck');
+            $table->string('customer');
+            $table->string('cust_address');
             $table->string('despatch_spv')->nullable();
             $table->string('despatch_manag')->nullable();
             $table->string('authorized_sign')->nullable();
